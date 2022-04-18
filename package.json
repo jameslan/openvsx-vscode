@@ -1,0 +1,43 @@
+{
+    "name": "openvsx-vscode",
+    "main": "out/extension.js",
+    "version": "0.1.0",
+    "displayName": "Marketplace Switcher",
+    "description": "",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "scripts": {
+        "build": "tsc -p .",
+        "watch": "tsc -watch -p .",
+        "vscode:prepublish": "npm run build",
+        "package": "rm -rf out && vsce package",
+        "lint": "eslint --ext .ts src"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.64.0",
+        "@typescript-eslint/eslint-plugin": "^5.19.0",
+        "@typescript-eslint/parser": "^5.19.0",
+        "eslint": "^8.13.0",
+        "typescript": "^4.5.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jameslan/openvsx-vscode.git"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "openvsx.switch",
+                "title": "Switch Marketplace"
+            }
+        ]
+    },
+    "extensionKind": [
+        "ui"
+    ],
+    "activationEvents": [
+        "onCommand:openvsx.switch"
+    ],
+    "author": "James Lan <jameslan@gmail.com>"
+}

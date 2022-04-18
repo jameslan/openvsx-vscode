@@ -1,0 +1,9 @@
+root: true
+extends:
+  -  plugin:@typescript-eslint/recommended
+parserOptions:
+  sourceType: module
+  project:
+    - ./tsconfig.json
+env:
+  es2020: true
