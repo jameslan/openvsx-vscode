@@ -5,6 +5,7 @@
         "strict": true,
         "outDir": "out",
         "module": "commonjs",
+        "esModuleInterop": true,
         "rootDir": "src"
     },
     "exclude": [

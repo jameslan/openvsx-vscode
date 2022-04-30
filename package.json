@@ -15,6 +15,7 @@
         "lint": "eslint --ext .ts src"
     },
     "devDependencies": {
+        "@types/node": "^17.0.24",
         "@types/vscode": "^1.64.0",
         "@typescript-eslint/eslint-plugin": "^5.19.0",
         "@typescript-eslint/parser": "^5.19.0",
@@ -31,7 +32,24 @@
                 "command": "openvsx.switch",
                 "title": "Switch Marketplace"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Marketplace Switcher",
+            "properties": {
+                "openvsx.switcher.marketplaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "description": { "type": "string" },
+                            "serviceUrl": { "type": "string" },
+                            "itemUrl": { "type": "string" }
+                        },
+                        "required": [ "serviceUrl", "itemUrl" ]
+                    }
+                }
+            }
+        }
     },
     "extensionKind": [
         "ui"
