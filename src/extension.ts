@@ -64,6 +64,7 @@ class Switcher {
         try {
             await fs.unlink(this.productPath)
             await fs.rename(this.origPath, this.productPath)
+            vscode.window.showInformationMessage('Marketplace changed, restart Visual Studio Code to take effect.')
         } catch (e) {
             vscode.window.showErrorMessage(`Failed to revert the marketplace configuration: ${e}`)
         }
@@ -80,6 +81,7 @@ class Switcher {
             const product = JSON.parse((await fs.readFile(this.productPath)).toString())
             product.extensionsGallery = { serviceUrl: config.serviceUrl, itemUrl: config.itemUrl }
             await fs.writeFile(this.productPath, Buffer.from(JSON.stringify(product)))
+            vscode.window.showInformationMessage('Marketplace changed, restart Visual Studio Code to take effect.')
         } catch (e) {
             vscode.window.showErrorMessage(`Failed to update marketplace configuration: ${e}`)
         }
