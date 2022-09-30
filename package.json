@@ -1,12 +1,13 @@
 {
     "name": "openvsx-vscode",
     "main": "out/extension.js",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "displayName": "Marketplace Switcher",
-    "description": "",
+    "description": "Switch among multiple extension Marketplaces",
     "engines": {
         "vscode": "^1.64.0"
     },
+    "publisher": "jameslan",
     "icon": "icon.png",
     "scripts": {
         "build": "tsc -p .",
@@ -27,6 +28,8 @@
         "type": "git",
         "url": "https://github.com/jameslan/openvsx-vscode.git"
     },
+    "bugs": "https://github.com/jameslan/openvsx-vscode/issues",
+    "homepage": "https://github.com/jameslan/openvsx-vscode",
     "contributes": {
         "commands": [
             {
@@ -58,5 +61,6 @@
     "activationEvents": [
         "onCommand:openvsx.switch"
     ],
+    "license": "Apache 2.0",
     "author": "James Lan <jameslan@gmail.com>"
 }
